@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+
+# Firebase credentials
+*firebase-adminsdk*.json
+preventify-c82f6-firebase-adminsdk-fbsvc-77e79ca3d4.json
+
+# Google OAuth credentials
+*client_secret*.json
+client_secret_102846577494-aer41kk9vmklp3p3a8j9khr33h2t7778.apps.googleusercontent.com.json

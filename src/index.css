@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 201 96% 40%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 199 84% 55%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 201 96% 40%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 199 84% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .medical-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 p-4;
+  }
+  
+  .medical-input {
+    @apply border border-gray-200 rounded-md px-3 py-2 focus:ring-2 focus:ring-medical-primary/30 focus:border-medical-primary outline-none transition-all;
+  }
+  
+  .medical-label {
+    @apply text-sm font-medium text-gray-700 mb-1;
+  }
+  
+  .medical-badge {
+    @apply px-2 py-0.5 text-xs font-medium rounded-full;
+  }
+  
+  .medical-badge-primary {
+    @apply bg-medical-primary/10 text-medical-primary;
+  }
+  
+  .medical-badge-warning {
+    @apply bg-medical-warning/10 text-medical-warning;
+  }
+  
+  .medical-badge-error {
+    @apply bg-medical-error/10 text-medical-error;
+  }
+  
+  .medical-badge-success {
+    @apply bg-medical-success/10 text-medical-success;
+  }
+}
