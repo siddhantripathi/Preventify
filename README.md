@@ -5,7 +5,6 @@ A medical diagnostic application that leverages AI to assist doctors in making f
 ## Features
 
 - **Firebase Integration**: Authentication, Firestore database, and storage
-- **Gemini AI**: AI-powered diagnosis system
 - **Role-Based Access**: Admin, Doctor, and MPHW (Multi-Purpose Health Worker) roles
 - **Patient Management**: Add, edit, and track patients
 - **Medical Records**: Store and access patient history and vitals
