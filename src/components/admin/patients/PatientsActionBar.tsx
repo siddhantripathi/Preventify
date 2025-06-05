@@ -1,7 +1,5 @@
-
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import AddMockPatientsButton from "@/components/admin/AddMockPatientsButton";
 
 interface PatientsActionBarProps {
   onExportCSV: () => void;
@@ -26,7 +24,6 @@ const PatientsActionBar = ({ onExportCSV, disabled }: PatientsActionBarProps) =>
           <Download size={16} />
           Export CSV
         </Button>
-        <AddMockPatientsButton />
       </div>
     </div>
   );

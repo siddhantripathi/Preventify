@@ -3,8 +3,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword, 
   signOut,
-  signInWithPopup,
-  GoogleAuthProvider,
   onAuthStateChanged,
   User as FirebaseUser
 } from 'firebase/auth';
@@ -119,25 +117,6 @@ export const useFirebaseAuth = () => {
     }
   }, [formatUser]);
 
-  // Google sign-in
-  const loginWithGoogle = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const formattedUser = await formatUser(result.user);
-      return { user: formattedUser, session: null };
-    } catch (err: any) {
-      setError(err);
-      console.error('Google sign-in error:', err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, [formatUser]);
-
   // Sign out
   const logout = useCallback(async () => {
     setLoading(true);
@@ -237,7 +216,6 @@ export const useFirebaseAuth = () => {
     error,
     initAuth,
     login,
-    loginWithGoogle,
     logout,
     updateUserSettings,
     logActivity

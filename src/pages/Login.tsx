@@ -8,7 +8,7 @@ import { useDevice } from "@/hooks/use-mobile";
 import { useToast } from "@/components/ui/use-toast";
 
 const Login = () => {
-  const { login, loginWithGoogle, user } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
@@ -58,20 +58,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      await loginWithGoogle();
-      // Navigation is handled by the useEffect that watches for user changes
-    } catch (error) {
-      console.error("Google login error:", error);
-      toast({
-        title: "Google login failed",
-        description: "An error occurred during Google sign-in. Please try again.",
-        variant: "destructive"
-      });
-    }
-  };
-
   // Set current role based on the selected tab
   const handleRoleChange = (value: string) => {
     setCurrentRole(value);
@@ -114,7 +100,6 @@ const Login = () => {
               <LoginForm
                 role="doctor"
                 onSubmit={handleLogin}
-                onGoogleLogin={handleGoogleLogin}
                 isLoading={isLoading}
               />
             </TabsContent>
@@ -122,7 +107,6 @@ const Login = () => {
               <LoginForm
                 role="mphw"
                 onSubmit={handleLogin}
-                onGoogleLogin={handleGoogleLogin}
                 isLoading={isLoading}
               />
             </TabsContent>
@@ -130,7 +114,6 @@ const Login = () => {
               <LoginForm
                 role="admin"
                 onSubmit={handleLogin}
-                onGoogleLogin={handleGoogleLogin}
                 isLoading={isLoading}
               />
             </TabsContent>

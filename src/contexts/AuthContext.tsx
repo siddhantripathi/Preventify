@@ -10,10 +10,6 @@ interface AuthContextType {
     user: any;
     session: null;
   } | undefined>;
-  loginWithGoogle: () => Promise<{
-    user: any;
-    session: null;
-  } | undefined>;
   logout: () => Promise<boolean>;
   registerActivity: (action: string, resourceType: string, resourceId: string, details?: string) => Promise<void>;
   updateUserSettings: (settings: { geminiApiKey?: string }) => Promise<boolean>;
@@ -23,7 +19,6 @@ const AuthContext = createContext<AuthContextType>({
   user: null,
   loading: true,
   login: async () => undefined,
-  loginWithGoogle: async () => undefined,
   logout: async () => true,
   registerActivity: async () => {},
   updateUserSettings: async () => false,
@@ -36,7 +31,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     user,
     loading,
     login,
-    loginWithGoogle,
     logout,
     logActivity,
     updateUserSettings,
@@ -72,8 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     <AuthContext.Provider value={{ 
       user, 
       loading, 
-      login, 
-      loginWithGoogle,
+      login,
       logout, 
       registerActivity, 
       updateUserSettings 
