@@ -23,7 +23,7 @@ A medical diagnostic application that leverages AI to assist doctors in making f
 
 1. Clone the repository
 2. Install dependencies with `npm install`
-3. Configure environment variables for Firebase and Gemini API
+3. Configure environment variables for Firebase and AWS
 4. Run the development server with `npm run dev`
 
 ## License
