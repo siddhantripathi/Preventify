@@ -15,7 +15,7 @@ A medical diagnostic application that leverages AI to assist doctors in making f
 - React
 - TypeScript
 - Firebase (Authentication, Firestore, Storage)
-- Google Gemini AI
+- AWS for hosting LLM
 - Tailwind CSS
 - shadcn/ui Components
 
